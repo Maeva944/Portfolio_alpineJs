@@ -19,10 +19,11 @@ class HomeController extends AbstractController
     #[Route('/', name: 'home')]
     public function index(): Response
     {
-        // Récupérer toutes les compétences depuis la base de données
+
         $competences = $this->entityManager->getRepository(Competence::class)->findAll();
 
-        // Passer les compétences à la vue
+        dump($competences);
+
         return $this->render('accueil.html.twig', [
             'competences' => $competences,
         ]);

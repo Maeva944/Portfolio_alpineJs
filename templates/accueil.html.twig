@@ -29,29 +29,48 @@
             <button @click="tab = 3, activeButton = 3" :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'" :class="activeButton === 3 ? 'active' : 'default'">Autre</button>
 
             <template x-if="tab === 1" >
-                <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
-                    <img src="" alt="">
-                    <h3>HTML - CSS</h3>
-                    <p>lorem</p>
-                </article>
+                {% for competence in competences %}
+                    {% if competence.categorie.nom == 'Front-end' %}
+                    <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
+                    <img src="{{ asset('images/' ~ competence.image) }}" alt="">
+                    <div>
+                        <h3>{{ competence.titre }}</h3>
+                        <p>{{ competence.description }}</p>
+                    </div>
+                    </article>
+                    {% endif %}
+                {% endfor %}
             </template>
 
             <template x-if="tab === 2">
-                <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
-                    <img src="" alt="">
-                    <h3>PHP - Symfony</h3> 
-                    <p>lorem</p>
-                </article>
+                {% for competence in competences %}
+                    {% if competence.categorie.nom == 'Back-end' %}
+                    <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
+                    <img src="{{ asset('images/' ~ competence.image) }}" alt="">
+                    <div>
+                        <h3>{{ competence.titre }}</h3>
+                        <p>{{ competence.description }}</p>
+                    </div>
+                    </article>
+                    {% endif %}
+                {% endfor %}
             </template>
 
             <template x-if="tab === 3">
-                <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
-                    <img src="" alt="">
-                    <h3>HTML - CSS</h3>
-                    <p>lorem</p>
-                </article>
+                {% for competence in competences %}
+                    {% if competence.categorie.nom == 'Autre' %}
+                    <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
+                    <img src="{{ asset('images/' ~ competence.image) }}" alt="">
+                    <div>
+                        <h3>{{ competence.titre }}</h3>
+                        <p>{{ competence.description }}</p>
+                    </div>
+                    </article>
+                    {% endif %}
+                {% endfor %}
             </template>
         </div>
     </section>
+
 </main>
 {% endblock %}

@@ -188,6 +188,33 @@ main section:nth-child(3) button{
     background-color: #9d77b1!important;
 }
 
+main section:nth-child(3) article{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 1px solid #333;
+}
+
+main section:nth-child(3) article img{
+    width: 25%;
+    margin-left: 2%;
+}
+
+main section:nth-child(3) article div {
+    width: 50%;
+    margin-left: 5%;
+}
+main section:nth-child(3) article h3{
+    width: 78%;
+    padding: 4% 0 2% 0;
+    font-size: 18pt;
+}
+
+main section:nth-child(3) article p{
+    width: 100%;
+    text-align: left;
+}
+
 
 
 

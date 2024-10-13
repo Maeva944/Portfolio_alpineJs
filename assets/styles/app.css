@@ -1,0 +1,144 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: Buchelight;
+    src: url(../Font/BucheLight.otf);
+}
+
+@font-face {
+    font-family: workSanslight;
+    src: url(../Font/WorkSans-Light.ttf);
+}
+
+body {
+    transition: background-color 0.5s, color 0.5s;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    margin-top: 79px;
+    flex: 1;
+}
+
+header{
+    transition: background-color 0.5s, color 0.5s;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 0 1%;
+}
+
+header h1{
+    font-family: 'Buchelight';
+    font-size: 35pt;
+    padding: 10px 0;
+}
+
+h2,h3,h4{
+    font-family: 'Buchelight';
+}
+
+p{
+    font-family: 'workSanslight';
+}
+header nav a{
+    font-size: 15pt;
+    margin-left: 30px;
+    text-decoration: none;
+    font-family: 'workSanslight';
+}
+
+form select{
+    cursor: pointer;
+}
+
+i{
+    cursor: pointer;
+    font-size: 25pt;
+    width: 10%;
+}
+
+header > i.fa-solid.fa-moon{
+    color: rgb(5, 5, 129);
+}
+
+header > i.fa-solid.fa-sun{
+    color: rgb(226, 221, 58);
+}
+
+form label{
+    font-size: 15pt;
+    font-family: 'workSanslight';
+}
+
+select {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+main section:first-child{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 3% 0 5% 7%;
+}
+
+main section:first-child img{
+    width: 30%;
+    border-radius: 50%;
+}
+
+main section:first-child div{
+    display: block;
+    width: 35%;
+    padding-left: 3%;
+}
+
+main section:first-child div h2{
+    font-size: 23pt;
+}
+
+main section:first-child div p{
+    width: 90%;
+    font-size: 12pt;
+    margin-bottom: 5%;
+    line-height: 10%;
+}
+
+main section:first-child div a{
+    text-decoration: none;
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 15pt;
+}
+
+
+
+
+
+
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 15px 0;
+    justify-content: center;
+}
+
+[x-cloak] { display: none; }

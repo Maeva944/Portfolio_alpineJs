@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr"  x-data="{ isDarkMode: false }" x-cloak>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Portfolio{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        {% block stylesheets %}
+        <script src="https://kit.fontawesome.com/6d66900dda.js" crossorigin="anonymous"></script>
+        <script src="//unpkg.com/alpinejs" defer></script>
+        {% endblock %}
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+            <script src="/assets/js/translation.js"></script>
+        {% endblock %}
+    </head>
+    <header :style="isDarkMode ? 'background-color: #664f72; color: white;' : 'background-color: #d9abf1; color: black;'">
+        <h1 :style="isDarkMode ? 'color: #f2cbd4;' : 'color: black;'">Maëva.N</h1>
+        <nav>
+            <a href="{{ path('home') }}" :style="isDarkMode ? 'color: white;' : 'color: black;'" >Accueil</a>
+            <a href="{{ path('home') }}" :style="isDarkMode ? 'color: white;' : 'color: black;'" >À propos</a>
+            <a href="{{ path('home') }}" :style="isDarkMode ? 'color: white;' : 'color: black;'" >Expérience</a>
+            <a href="{{ path('home') }}" :style="isDarkMode ? 'color: white;' : 'color: black;'" >Contact</a>
+        </nav>
+
+        <form>
+            <label for="language">Langue :</label>
+            <select name="language" id="language" x-model="selectedLang" @change="translatePage()">
+                <option value="FR">Français</option>
+                <option value="EN">Anglais</option>
+            </select>
+        </form>
+
+        <!-- Bouton pour le mode clair -->
+        <i @click="isDarkMode = true"  x-show="!isDarkMode" class="fa-solid fa-moon" ></i> 
+        
+        
+        <!-- Bouton pour le mode sombre -->
+        <i @click="isDarkMode = false"  x-show="isDarkMode" class="fa-solid fa-sun" ></i> 
+        
+    </header>
+    <body :style="isDarkMode ? 'background-color: #523a5f; color: white;': 'background-color: rgb(236, 215, 241); color: black;'" >
+        {% block body %}{% endblock %}
+    </body>
+    <footer :style="isDarkMode ? 'background-color: #664f72; color: white;' : 'background-color: #d9abf1; color: black;'">
+        <p> &copy; Maëva | Tous droits réservés</p>
+    </footer>
+</html>

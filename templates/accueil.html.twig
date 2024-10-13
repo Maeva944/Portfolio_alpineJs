@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<main>
+    <section>
+        <img src="{{ asset('images/blank-profile-picture-973460_1280.png') }}" alt="">
+        <div>
+            <h2>Développeuse Web Passionnée</h2>
+            <p>Je suis étudiante en développement web et application, passionnée par la création de solutions innovantes et l'amélioration de l'expérience utilisateur.</p>
+            <a href="{{ asset('documents/cv-maeva.pdf') }}" download class="cv-button"  :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">Télécharger mon CV</a>
+        <div>
+    </section>
+    <section>
+        <h2>À Propos de Moi</h2>
+        <p>
+            Je m'appelle Maëva et je suis actuellement en 2e année de développement web et application. Mon intérêt pour la technologie a débuté par hasard lorsque je suis tombée sur une formation pour apprendre à créer des sites WordPress. C'est à partir de ce moment-là que j'ai voulu en savoir davantage sur la création de sites internet et que j'ai découvert la programmation.<br>
+            J'adore apprendre et découvrir de nouvelles technologies, ce qui me pousse à m'améliorer constamment.
+            En dehors du développement, je suis passionnée par la couture, la moto et le sport.
+        </p>
+    </section>
+    <section>
+        <h2>Mes compétences</h2>
+        <p>Voici un aperçu des technologies et outils que j'ai appris à utiliser.</p>
+        <div x-data="{ tab: 1 }">
+            <button @click="tab = 1">Front-end</button>
+            <button @click="tab = 2">Back-end</button>
+            <button @click="tab = 3">Autre</button>
+
+            <template x-if="tab === 1">
+                <article>
+                    <img src="" alt="">
+                    <h3>HTML - CSS</h3>
+                    <p>lorem</p>
+                </article>
+            </template>
+
+            <template x-if="tab === 2">
+                <article>
+                    <img src="" alt="">
+                    <h3>PHP - Symfony</h3> 
+                    <p>lorem</p>
+                </article>
+            </template>
+
+            <template x-if="tab === 3">
+                <article>
+                    <img src="" alt="">
+                    <h3>HTML - CSS</h3>
+                    <p>lorem</p>
+                </article>
+            </template>
+        </div>
+    </section>
+</main>
+{% endblock %}

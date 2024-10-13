@@ -12,7 +12,7 @@
             <a href="{{ asset('documents/cv-maeva.pdf') }}" download class="cv-button"  :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">Télécharger mon CV</a>
         <div>
     </section>
-    <section>
+    <section id="about">
         <h2>À Propos de Moi</h2>
         <p>
             Je m'appelle Maëva et je suis actuellement en 2e année de développement web et application. Mon intérêt pour la technologie a débuté par hasard lorsque je suis tombée sur une formation pour apprendre à créer des sites WordPress. C'est à partir de ce moment-là que j'ai voulu en savoir davantage sur la création de sites internet et que j'ai découvert la programmation.<br>
@@ -20,16 +20,16 @@
             En dehors du développement, je suis passionnée par la couture, la moto et le sport.
         </p>
     </section>
-    <section>
+    <section id="skils">
         <h2>Mes compétences</h2>
         <p>Voici un aperçu des technologies et outils que j'ai appris à utiliser.</p>
-        <div x-data="{ tab: 1 }">
-            <button @click="tab = 1">Front-end</button>
-            <button @click="tab = 2">Back-end</button>
-            <button @click="tab = 3">Autre</button>
+        <div x-data="{ tab: 1, activeButton: 1 }">
+            <button @click="tab = 1,activeButton = 1 " :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'" :class="activeButton === 1 ? 'active' : 'default'">Front-end</button>
+            <button @click="tab = 2, activeButton = 2" :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'" :class="activeButton === 2 ? 'active' : 'default'">Back-end</button>
+            <button @click="tab = 3, activeButton = 3" :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'" :class="activeButton === 3 ? 'active' : 'default'">Autre</button>
 
-            <template x-if="tab === 1">
-                <article>
+            <template x-if="tab === 1" >
+                <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
                     <img src="" alt="">
                     <h3>HTML - CSS</h3>
                     <p>lorem</p>
@@ -37,7 +37,7 @@
             </template>
 
             <template x-if="tab === 2">
-                <article>
+                <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
                     <img src="" alt="">
                     <h3>PHP - Symfony</h3> 
                     <p>lorem</p>
@@ -45,7 +45,7 @@
             </template>
 
             <template x-if="tab === 3">
-                <article>
+                <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
                     <img src="" alt="">
                     <h3>HTML - CSS</h3>
                     <p>lorem</p>

@@ -11,17 +11,19 @@
         {% block javascripts %}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
             <script src="/assets/js/translation.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
         {% endblock %}
     </head>
     <header :style="isDarkMode ? 'background-color: #664f72; color: white;' : 'background-color: #d9abf1; color: black;'">
         <h1 :style="isDarkMode ? 'color: #f2cbd4;' : 'color: black;'">Maëva.N</h1>
+        <div x-data="{ scrollTo(section) { document.getElementById(section).scrollIntoView({ behavior: 'smooth' }); } }">
         <nav>
             <a href="{{ path('home') }}" :style="isDarkMode ? 'color: white;' : 'color: black;'" >Accueil</a>
-            <a href="{{ path('home') }}" :style="isDarkMode ? 'color: white;' : 'color: black;'" >À propos</a>
-            <a href="{{ path('home') }}" :style="isDarkMode ? 'color: white;' : 'color: black;'" >Expérience</a>
+            <a a href="#" @click.prevent="scrollTo('about')" :style="isDarkMode ? 'color: white;' : 'color: black;'" >À propos</a>
+            <a a href="#" @click.prevent="scrollTo('skils')" :style="isDarkMode ? 'color: white;' : 'color: black;'" >Compétences</a>
             <a href="{{ path('home') }}" :style="isDarkMode ? 'color: white;' : 'color: black;'" >Contact</a>
         </nav>
-
+        </div>
         <form>
             <label for="language">Langue :</label>
             <select name="language" id="language" x-model="selectedLang" @change="translatePage()">

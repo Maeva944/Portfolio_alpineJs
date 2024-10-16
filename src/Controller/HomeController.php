@@ -1,17 +1,18 @@
 <?php
+
 namespace App\Controller;
 
-use App\Entity\Competence; 
+use App\Entity\Competence;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 
 class HomeController extends AbstractController
 {
-    private $entityManager;
+    private EntityManagerInterface $entityManager;
 
-    public function __construct(EntityManagerInterface $entityManager) 
+    public function __construct(EntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
     }
@@ -19,13 +20,11 @@ class HomeController extends AbstractController
     #[Route('/', name: 'home')]
     public function index(): Response
     {
+        // Pour le moment, nous n'avons plus de données à récupérer
 
-        $competences = $this->entityManager->getRepository(Competence::class)->findAll();
-
-        dump($competences);
-
+        // Rendu de la vue
         return $this->render('accueil.html.twig', [
-            'competences' => $competences,
+            // Pas de données à passer pour le moment
         ]);
     }
 }

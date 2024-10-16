@@ -9,7 +9,7 @@
         <div>
             <h2>Développeuse Web Passionnée</h2>
             <p>Je suis étudiante en développement web et application, passionnée par la création de solutions innovantes et l'amélioration de l'expérience utilisateur.</p>
-            <a href="{{ asset('documents/cv-maeva.pdf') }}" download class="cv-button"  :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">Télécharger mon CV</a>
+            <a href="{{ asset('Doc/cv-maeva.pdf') }}" download class="cv-button"  :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">Télécharger mon CV</a>
         <div>
     </section>
     <section id="about">
@@ -29,13 +29,13 @@
             <button @click="tab = 3, activeButton = 3" :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'" :class="activeButton === 3 ? 'active' : 'default'">Autre</button>
 
             <template x-if="tab === 1" >
-                {% for competence in competences %}
-                    {% if competence.categorie.nom == 'Front-end' %}
+             <!--   {% for realisation in realisations %}
+                    {% if realisation.categorie.nom == 'Front-end' %}
                     <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
-                    <img src="{{ asset('images/' ~ competence.image) }}" alt="">
+                    <img src="{{ asset('images/' ~ realisation.image) }}" alt="">
                     <div>
-                        <h3>{{ competence.titre }}</h3>
-                        <p>{{ competence.description }}</p>
+                        <h3>{{ realisation.titre }}</h3>
+                        <p>{{ realisation.description }}</p>
                     </div>
                     </article>
                     {% endif %}
@@ -70,6 +70,6 @@
                 {% endfor %}
             </template>
         </div>
-    </section>
+    </section> -->
 </main>
 {% endblock %}

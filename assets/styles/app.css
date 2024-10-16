@@ -164,7 +164,7 @@ main section:nth-child(3) p{
     width: 100%;
     text-align: center;
     font-size: 16pt;
-    padding-bottom: 3%;
+    padding-bottom: 0%;
 }
 
 main section:nth-child(3) div{
@@ -211,11 +211,9 @@ main section:nth-child(3) article h3{
     font-size: 18pt;
 }
 
-main section:nth-child(3) article p{
-    width: 100%;
+main section:nth-child(3) div p {
     text-align: left;
 }
-
 
 
 

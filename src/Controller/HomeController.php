@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Competence;
+use App\Entity\Realisation;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -21,10 +22,11 @@ class HomeController extends AbstractController
     public function index(): Response
     {
         // Pour le moment, nous n'avons plus de données à récupérer
+        $realisations = $this->entityManager->getRepository(Realisation::class)->findAll();
 
         // Rendu de la vue
         return $this->render('accueil.html.twig', [
-            // Pas de données à passer pour le moment
+            'home' => $realisations
         ]);
     }
 }

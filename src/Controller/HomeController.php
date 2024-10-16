@@ -26,7 +26,7 @@ class HomeController extends AbstractController
 
         // Rendu de la vue
         return $this->render('accueil.html.twig', [
-            'home' => $realisations
+            'realisations' => $realisations
         ]);
     }
 }

@@ -29,8 +29,8 @@
             <button @click="tab = 3, activeButton = 3" :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'" :class="activeButton === 3 ? 'active' : 'default'">Autre</button>
 
             <template x-if="tab === 1" >
-             <!--   {% for realisation in realisations %}
-                    {% if realisation.categorie.nom == 'Front-end' %}
+               {% for realisation in realisations %}
+                    {% if realisation.categorie.id == 1 %}
                     <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
                     <img src="{{ asset('images/' ~ realisation.image) }}" alt="">
                     <div>
@@ -44,7 +44,7 @@
 
             <template x-if="tab === 2">
                 {% for competence in competences %}
-                    {% if competence.categorie.nom == 'Back-end' %}
+                    {% if competence.categorie.id == 2 %}
                     <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
                     <img src="{{ asset('images/' ~ competence.image) }}" alt="">
                     <div>
@@ -58,7 +58,7 @@
 
             <template x-if="tab === 3">
                 {% for competence in competences %}
-                    {% if competence.categorie.nom == 'Autre' %}
+                    {% if competence.categorie.id == 3 %}
                     <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
                     <img src="{{ asset('images/' ~ competence.image) }}" alt="">
                     <div>
@@ -70,6 +70,6 @@
                 {% endfor %}
             </template>
         </div>
-    </section> -->
+    </section>
 </main>
 {% endblock %}

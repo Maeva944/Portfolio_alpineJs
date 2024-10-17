@@ -194,16 +194,17 @@ main section:nth-child(3) article{
     flex-wrap: wrap;
     width: 100%;
     border-bottom: 1px solid #333;
+    padding: 2%;
 }
 
 main section:nth-child(3) article img{
-    width: 25%;
+    width: 40%;
     margin-left: 2%;
 }
 
 main section:nth-child(3) article div {
-    width: 50%;
-    margin-left: 5%;
+    width: 40%;
+    margin-left: 1%;
 }
 main section:nth-child(3) article h3{
     width: 78%;

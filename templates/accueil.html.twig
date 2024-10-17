@@ -28,48 +28,6 @@
             <button @click="tab = 2, activeButton = 2" :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'" :class="activeButton === 2 ? 'active' : 'default'">Back-end</button>
             <button @click="tab = 3, activeButton = 3" :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'" :class="activeButton === 3 ? 'active' : 'default'">Autre</button>
 
-            <template x-if="tab === 1" >
-               {% for realisation in realisations %}
-                    {% if realisation.categorie.id == 1 %}
-                    <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
-                    <img src="{{ asset('images/' ~ realisation.image) }}" alt="">
-                    <div>
-                        <h3>{{ realisation.titre }}</h3>
-                        <p>{{ realisation.description }}</p>
-                    </div>
-                    </article>
-                    {% endif %}
-                {% endfor %}
-            </template>
-
-            <template x-if="tab === 2">
-                {% for competence in competences %}
-                    {% if competence.categorie.id == 2 %}
-                    <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
-                    <img src="{{ asset('images/' ~ competence.image) }}" alt="">
-                    <div>
-                        <h3>{{ competence.titre }}</h3>
-                        <p>{{ competence.description }}</p>
-                    </div>
-                    </article>
-                    {% endif %}
-                {% endfor %}
-            </template>
-
-            <template x-if="tab === 3">
-                {% for competence in competences %}
-                    {% if competence.categorie.id == 3 %}
-                    <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
-                    <img src="{{ asset('images/' ~ competence.image) }}" alt="">
-                    <div>
-                        <h3>{{ competence.titre }}</h3>
-                        <p>{{ competence.description }}</p>
-                    </div>
-                    </article>
-                    {% endif %}
-                {% endfor %}
-            </template>
-        </div>
     </section>
 </main>
 {% endblock %}

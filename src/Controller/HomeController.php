@@ -22,11 +22,11 @@ class HomeController extends AbstractController
     public function index(): Response
     {
         // Pour le moment, nous n'avons plus de données à récupérer
-        $realisations = $this->entityManager->getRepository(Realisation::class)->findAll();
+        //$realisations = $this->entityManager->getRepository(Realisation::class)->findAll();
 
         // Rendu de la vue
         return $this->render('accueil.html.twig', [
-            'realisations' => $realisations
+            //'realisations' => $realisations
         ]);
     }
 }

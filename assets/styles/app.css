@@ -215,6 +215,45 @@ main section:nth-child(3) div p {
     text-align: left;
 }
 
+main section:nth-child(3) div p:nth-child(3){
+    padding: 1% 0;
+}
+
+hr {
+    margin: 1% 0;
+    border: none; 
+    height: 1px; 
+    background-color: #333;
+}
+
+
+
+
+
+/* Styles par défaut (mode clair) */
+.button {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #d9abf1; 
+    color: black; 
+}
+
+/* Styles pour le mode sombre */
+.button.dark {
+    background-color: #6a4c7a; 
+    color: #f2cbd4; 
+}
+
+.active {
+    background-color: #6a4c7a; 
+    color: #f2cbd4; 
+}
+
+
+
+
 
 
 

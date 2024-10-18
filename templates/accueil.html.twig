@@ -20,9 +20,9 @@
             En dehors du développement, je suis passionnée par la couture, la moto et le sport.
         </p>
     </section>
-    <section id="skils">
-        <h2>Mes compétences</h2>
-        <p>Voici un aperçu des technologies et outils que j'ai appris à utiliser.</p>
+    <section id="skills">
+        <h2>Mes Réalisations</h2>
+        <p>Voici un aperçu des projets que j'ai réalisés, mettant en avant les technologies et outils que j'ai appris à utiliser.</p>
         <div x-data="{ tab: 1, activeButton: 1 }">
             <button @click="tab = 1,activeButton = 1 " :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'" :class="activeButton === 1 ? 'active' : 'default'">Front-end</button>
             <button @click="tab = 2, activeButton = 2" :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'" :class="activeButton === 2 ? 'active' : 'default'">Back-end</button>
@@ -30,41 +30,50 @@
 
             <template x-if="tab === 1" >
                {% for realisation in realisations %}
-                    {% if realisation.categorie.id == 1 %}
-                    <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
-                    <img src="{{ asset('images/' ~ realisation.image) }}" alt="">
-                    <div>
-                        <h3>{{ realisation.titre }}</h3>
-                        <p>{{ realisation.description }}</p>
-                    </div>
+                    {% if realisation.Categorie.id == 1 %}
+                    <article :class="['article', isDarkMode ? 'dark' : 'light']">
+                        <img src="{{ asset('images/' ~ realisation.image) }}" alt="">
+                        <div>
+                            <h3>{{ realisation.titre }}</h3>
+                            <a href="{{ realisation.LienGithub }}" target="_blank" :class="['nav-link', isDarkMode ? 'dark' : 'light']">Voir le site</a>
+                            <p>technologie utiliser -> {{ realisation.TechnoUse }}</p>
+                            <hr>
+                            <p>{{ realisation.description }}</p>
+                        </div>
                     </article>
                     {% endif %}
                 {% endfor %}
             </template>
 
-            <template x-if="tab === 2">
-                {% for competence in competences %}
-                    {% if competence.categorie.id == 2 %}
-                    <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
-                    <img src="{{ asset('images/' ~ competence.image) }}" alt="">
-                    <div>
-                        <h3>{{ competence.titre }}</h3>
-                        <p>{{ competence.description }}</p>
-                    </div>
+            <template x-if="tab === 2" >
+               {% for realisation in realisations %}
+                    {% if realisation.Categorie.id == 2 %}
+                    <article :class="['article', isDarkMode ? 'dark' : 'light']">
+                        <img src="{{ asset('images/' ~ realisation.image) }}" alt="">
+                        <div>
+                            <h3>{{ realisation.titre }}</h3>
+                            <a href="{{ realisation.LienGithub }}" target="_blank" :class="['nav-link', isDarkMode ? 'dark' : 'light']">Voir le site</a>
+                            <p>technologie utiliser -> {{ realisation.TechnoUse }}</p>
+                            <hr>
+                            <p>{{ realisation.description }}</p>
+                        </div>
                     </article>
                     {% endif %}
                 {% endfor %}
             </template>
 
-            <template x-if="tab === 3">
-                {% for competence in competences %}
-                    {% if competence.categorie.id == 3 %}
-                    <article :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'">
-                    <img src="{{ asset('images/' ~ competence.image) }}" alt="">
-                    <div>
-                        <h3>{{ competence.titre }}</h3>
-                        <p>{{ competence.description }}</p>
-                    </div>
+            <template x-if="tab === 3" >
+               {% for realisation in realisations %}
+                    {% if realisation.Categorie.id == 3 %}
+                    <article :class="['article', isDarkMode ? 'dark' : 'light']">
+                        <img src="{{ asset('images/' ~ realisation.image) }}" alt="">
+                        <div>
+                            <h3>{{ realisation.titre }}</h3>
+                            <a href="{{ realisation.LienGithub }}" target="_blank" :class="['nav-link', isDarkMode ? 'dark' : 'light']">Voir le site</a>
+                            <p>technologie utiliser -> {{ realisation.TechnoUse }}</p>
+                            <hr>
+                            <p>{{ realisation.description }}</p>
+                        </div>
                     </article>
                     {% endif %}
                 {% endfor %}

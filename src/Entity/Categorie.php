@@ -21,7 +21,7 @@ class Categorie
     /**
      * @var Collection<int, Realisation>
      */
-    #[ORM\OneToMany(targetEntity: Realisation::class, mappedBy: 'id_categorie')]
+    #[ORM\OneToMany(targetEntity: Realisation::class, mappedBy: 'categorie')]
     private Collection $realisation;
 
     public function __construct()
@@ -58,7 +58,7 @@ class Categorie
     {
         if (!$this->realisation->contains($realisation)) {
             $this->realisation->add($realisation);
-            $realisation->setIdCategorie($this);
+            $realisation->setCategorie($this);
         }
 
         return $this;
@@ -68,8 +68,8 @@ class Categorie
     {
         if ($this->realisation->removeElement($realisation)) {
             // set the owning side to null (unless already changed)
-            if ($realisation->getIdCategorie() === $this) {
-                $realisation->setIdCategorie(null);
+            if ($realisation->getCategorie() === $this) {
+                $realisation->setCategorie(null);
             }
         }
 

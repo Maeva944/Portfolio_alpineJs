@@ -42,7 +42,7 @@ header{
     position: fixed;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.347);
     width: 100%;
     padding: 0 1%;
 }
@@ -167,14 +167,14 @@ main section:nth-child(3) p{
     padding-bottom: 0%;
 }
 
-main section:nth-child(3) div{
+main section:nth-child(3) span{
     width: 100%;
     padding: 3% 8%;
 }
 
-main section:nth-child(3) div article{
+main section:nth-child(3) span article{
     border-radius: 10px;
-    transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.5s, color 0.1s;
 }
 
 main section:nth-child(3) button{
@@ -197,13 +197,15 @@ main section:nth-child(3) article{
 }
 
 main section:nth-child(3) article img{
-    width: 25%;
+    width: 40%;
     margin-left: 2%;
+    padding: 1%;
+    height: auto;
 }
 
 main section:nth-child(3) article div {
-    width: 50%;
-    margin-left: 5%;
+    width: 45%;
+    padding: 2% 0 2% 3%;
 }
 main section:nth-child(3) article h3{
     width: 78%;
@@ -213,6 +215,12 @@ main section:nth-child(3) article h3{
 
 main section:nth-child(3) div p {
     text-align: left;
+}
+
+main section:nth-child(3) div a{
+    text-decoration: none;
+    font-size: 15pt;
+    color: #9e00f3;
 }
 
 main section:nth-child(3) div p:nth-child(3){
@@ -228,9 +236,28 @@ hr {
 
 
 
+/*Style pour le dark and light mode*/
 
 
-/* Styles par défaut (mode clair) */
+.header.dark {
+    background-color: #664f72;
+    color: #fff;
+}
+
+.header.light{
+    background-color: #d9abf1;
+    color: #333;
+}
+
+.article.light{
+    background-color: #d9abf1;
+    color: #333;
+}
+.article.dark {
+    background-color:  #6a4c7a;
+    color: #f2cbd4;
+}
+
 .button {
     padding: 10px 15px;
     border: none;
@@ -240,16 +267,20 @@ hr {
     color: black; 
 }
 
-/* Styles pour le mode sombre */
+
 .button.dark {
     background-color: #6a4c7a; 
     color: #f2cbd4; 
 }
 
-.active {
-    background-color: #6a4c7a; 
-    color: #f2cbd4; 
+.text.dark a {
+    color: #fff;
 }
+
+.text.light a{
+    color: #333;
+}
+
 
 
 

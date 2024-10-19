@@ -14,14 +14,15 @@
             <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
         {% endblock %}
     </head>
-    <header :style="isDarkMode ? 'background-color: #664f72; color: white;' : 'background-color: #d9abf1; color: black;'">
+    <header :class="['header', isDarkMode ? 'dark' : 'light']">
         <h1 :style="isDarkMode ? 'color: #f2cbd4;' : 'color: black;'">Maëva.N</h1>
         <div x-data="{ scrollTo(section) { document.getElementById(section).scrollIntoView({ behavior: 'smooth' }); } }">
-        <nav>
-            <a href="{{ path('home') }}" :style="isDarkMode ? 'color: white;' : 'color: black;'" >Accueil</a>
-            <a a href="#" @click.prevent="scrollTo('about')" :style="isDarkMode ? 'color: white;' : 'color: black;'" >À propos</a>
-            <a a href="#" @click.prevent="scrollTo('skils')" :style="isDarkMode ? 'color: white;' : 'color: black;'" >Compétences</a>
-            <a href="{{ path('home') }}" :style="isDarkMode ? 'color: white;' : 'color: black;'" >Contact</a>
+        <nav :class="['text', isDarkMode ? 'dark' : 'light']">
+            <a href="{{ path('home') }}" >Accueil</a>
+            <a a href="#" @click.prevent="scrollTo('about')">À propos</a>
+            <a a href="#" @click.prevent="scrollTo('skills')" >Réalisation</a>
+            <a href="{{ path('home') }}">Certification</a>
+            <a href="{{ path('home') }}">Contact</a>
         </nav>
         </div>
         <form>
@@ -43,7 +44,7 @@
     <body :style="isDarkMode ? 'background-color: #523a5f; color: white;': 'background-color: rgb(236, 215, 241); color: black;'" >
         {% block body %}{% endblock %}
     </body>
-    <footer :style="isDarkMode ? 'background-color: #664f72; color: white;' : 'background-color: #d9abf1; color: black;'">
+    <footer :class="['header', isDarkMode ? 'dark' : 'light']">
         <p> &copy; Maëva | Tous droits réservés</p>
     </footer>
 </html>

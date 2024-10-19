@@ -20,16 +20,16 @@ class Realisation
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $image = null;
-
-    #[ORM\Column(length: 255)]
     private ?string $lien_github = null;
-
-    #[ORM\ManyToOne(inversedBy: 'realisation')]
-    private ?categorie $id_categorie = null;
 
     #[ORM\Column(length: 255)]
     private ?string $techno_use = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $image = null;
+
+    #[ORM\ManyToOne(inversedBy: 'realisation')]
+    private ?categorie $categorie = null;
 
     public function getId(): ?int
     {
@@ -60,18 +60,6 @@ class Realisation
         return $this;
     }
 
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(string $image): static
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
     public function getLienGithub(): ?string
     {
         return $this->lien_github;
@@ -80,18 +68,6 @@ class Realisation
     public function setLienGithub(string $lien_github): static
     {
         $this->lien_github = $lien_github;
-
-        return $this;
-    }
-
-    public function getIdCategorie(): ?categorie
-    {
-        return $this->id_categorie;
-    }
-
-    public function setIdCategorie(?categorie $id_categorie): static
-    {
-        $this->id_categorie = $id_categorie;
 
         return $this;
     }
@@ -108,5 +84,27 @@ class Realisation
         return $this;
     }
 
-    
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): static
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function getCategorie(): ?categorie
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(?categorie $categorie): static
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
 }

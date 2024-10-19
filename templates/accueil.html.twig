@@ -15,15 +15,25 @@
     <section id="about">
         <h2>À Propos de Moi</h2>
         <p>
-            Je m'appelle Maëva et je suis actuellement en 2e année de développement web et application. Mon intérêt pour la technologie a débuté par hasard lorsque je suis tombée sur une formation pour apprendre à créer des sites WordPress. C'est à partir de ce moment-là que j'ai voulu en savoir davantage sur la création de sites internet et que j'ai découvert la programmation.<br>
-            J'adore apprendre et découvrir de nouvelles technologies, ce qui me pousse à m'améliorer constamment.
-            En dehors du développement, je suis passionnée par la couture, la moto et le sport.
+            Je suis passionnée par le développement web, une passion que j'ai découverte par hasard en tombant sur une formation pour créer des sites WordPress. J'y ai pris goût et j'ai voulu approfondir mes connaissances en explorant le cœur de chaque bloc.
+            <br>
+            <br>
+            Actuellement, je suis en 2e année de développement web et application à l'Efrei. J'ai suivi des formations sur la création de sites WordPress ainsi que sur le SEO, ce qui m'a permis de mieux comprendre les enjeux du web.
+            <br>
+            <br>
+            Mes compétences principales se situent dans le front-end, mais j'apprécie également le back-end, un domaine que je trouve particulièrement intéressant. En ce moment, j'utilise le framework Symfony pour mes projets.
+            <br>
+            <br>
+            À court terme, je cherche une alternance et un stage de fin d'année pour mettre en pratique mes connaissances. À long terme, mon objectif est de devenir développeuse web en Angleterre, un pays qui m'attire particulièrement.
+            <br>
+            <br>
+            Je suis une personne qui apprécie le travail en équipe et je n'ai pas de mal à établir le contact avec les autres. Je ne suis pas timide et j'ai une facilité à comprendre de nouvelles choses. En dehors de la programmation, mes passions incluent la moto, la couture et la musculation.
         </p>
     </section>
     <section id="skills">
         <h2>Mes Réalisations</h2>
         <p>Voici un aperçu des projets que j'ai réalisés, mettant en avant les technologies et outils que j'ai appris à utiliser.</p>
-        <div x-data="{ tab: 1, activeButton: 1 }">
+        <span x-data="{ tab: 1, activeButton: 1 }">
             <button @click="tab = 1,activeButton = 1 " :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'" :class="activeButton === 1 ? 'active' : 'default'">Front-end</button>
             <button @click="tab = 2, activeButton = 2" :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'" :class="activeButton === 2 ? 'active' : 'default'">Back-end</button>
             <button @click="tab = 3, activeButton = 3" :style="isDarkMode ? 'background-color: #6a4c7a; color: #f2cbd4;' : 'background-color: #d9abf1; color: black;'" :class="activeButton === 3 ? 'active' : 'default'">Autre</button>
@@ -35,7 +45,7 @@
                         <img src="{{ asset('images/' ~ realisation.image) }}" alt="">
                         <div>
                             <h3>{{ realisation.titre }}</h3>
-                            <a href="{{ realisation.LienGithub }}" target="_blank" :class="['nav-link', isDarkMode ? 'dark' : 'light']">Voir le site</a>
+                            <a href="{{ realisation.LienGithub }}" target="_blank">Voir le site</a>
                             <p>technologie utiliser -> {{ realisation.TechnoUse }}</p>
                             <hr>
                             <p>{{ realisation.description }}</p>
@@ -69,7 +79,7 @@
                         <img src="{{ asset('images/' ~ realisation.image) }}" alt="">
                         <div>
                             <h3>{{ realisation.titre }}</h3>
-                            <a href="{{ realisation.LienGithub }}" target="_blank" :class="['nav-link', isDarkMode ? 'dark' : 'light']">Voir le site</a>
+                            <a href="{{ realisation.LienGithub }}" target="_blank">Voir le site</a>
                             <p>technologie utiliser -> {{ realisation.TechnoUse }}</p>
                             <hr>
                             <p>{{ realisation.description }}</p>
@@ -78,7 +88,11 @@
                     {% endif %}
                 {% endfor %}
             </template>
-        </div>
+        </span>
+    </section>
+    <section id="contact">
+        <h2>Mes certifications</h2>
+
     </section>
 </main>
 {% endblock %}

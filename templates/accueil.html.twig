@@ -97,11 +97,14 @@
             <article :class="['article', isDarkMode ? 'dark' : 'light']">
                 <img src="{{ asset('images/' ~ certification.image) }}" alt="">
                 <h3>{{ certification.titre }}</h3>
-                <h4>Organisme :{{ certification.organisme }}</h4>
+                <h4>Organisme : {{ certification.organisme }}</h4>
                 <p>{{ certification.description }}</p>
             </article>
             {% endfor %}
         </div>
+    </section>
+    <section id="contact">
+        <h2>Comment me contacter ?</h2>
     </section>
 </main>
 {% endblock %}

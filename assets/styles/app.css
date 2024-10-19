@@ -140,7 +140,7 @@ main section:nth-child(2){
     padding: 7% 0 0 0;
 }
 
-main section:nth-child(2) h2, main section:nth-child(3) h2{
+main section:nth-child(2) h2, main section:nth-child(3) h2, #certif h2{
     padding: 20px 0 30px 0;
     font-size: 25pt;
     width: 100%;
@@ -255,7 +255,7 @@ hr {
 }
 .article.dark {
     background-color:  #6a4c7a;
-    color: #f2cbd4;
+    color: #fff;
 }
 
 .button {
@@ -282,8 +282,37 @@ hr {
 }
 
 
+/*style certification */
 
+#certif{
+    padding-top: 5%;
+}
+#certif div{
+    padding: 3% 2%;
+    display: flex;
+    flex-wrap: wrap;
+}
+#certif article{
+    width: 25%;
+    border: 1px solid #333;
+    padding: 1.5%;
+    border-radius: 0 60px 0 60px;
+    margin-left: 3%;
+}
 
+#certif article img{
+    width: 100%;
+    border-top-right-radius: 50px;
+}
+
+#certif article h3{
+    padding: 1% 0;
+    font-size: 15pt;
+}
+
+#certif article p{
+    padding: 2% 0 0 0;
+}
 
 
 

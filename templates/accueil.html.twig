@@ -90,9 +90,18 @@
             </template>
         </span>
     </section>
-    <section id="contact">
+    <section id="certif">
         <h2>Mes certifications</h2>
-
+        <div>
+            {% for certification in certifications %}
+            <article :class="['article', isDarkMode ? 'dark' : 'light']">
+                <img src="{{ asset('images/' ~ certification.image) }}" alt="">
+                <h3>{{ certification.titre }}</h3>
+                <h4>Organisme :{{ certification.organisme }}</h4>
+                <p>{{ certification.description }}</p>
+            </article>
+            {% endfor %}
+        </div>
     </section>
 </main>
 {% endblock %}

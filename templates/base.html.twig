@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Portfolio{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <link rel="icon" href="{{ asset('images/portfolio_icon.png') }}">
         {% block stylesheets %}
         <script src="https://kit.fontawesome.com/6d66900dda.js" crossorigin="anonymous"></script>
         <script src="//unpkg.com/alpinejs" defer></script>
@@ -17,13 +17,13 @@
     <header :class="['header', isDarkMode ? 'dark' : 'light']">
         <h1 :style="isDarkMode ? 'color: #f2cbd4;' : 'color: black;'">Maëva.N</h1>
         <div x-data="{ scrollTo(section) { document.getElementById(section).scrollIntoView({ behavior: 'smooth' }); } }">
-        <nav :class="['text', isDarkMode ? 'dark' : 'light']">
-            <a href="{{ path('home') }}" >Accueil</a>
-            <a a href="#" @click.prevent="scrollTo('about')">À propos</a>
-            <a a href="#" @click.prevent="scrollTo('skills')" >Réalisation</a>
-            <a href="#" @click.prevent="scrollTo('certif')" >Certification</a>
-            <a href="{{ path('home') }}">Contact</a>
-        </nav>
+            <nav :class="['text', isDarkMode ? 'dark' : 'light']">
+                <a href="{{ path('home') }}" >Accueil</a>
+                <a a href="#" @click.prevent="scrollTo('about')">À propos</a>
+                <a a href="#" @click.prevent="scrollTo('skills')" >Réalisation</a>
+                <a href="#" @click.prevent="scrollTo('certif')" >Certification</a>
+                <a href="#" @click.prevent="scrollTo('contact')">Contact</a>
+            </nav>
         </div>
         <form>
             <label for="language">Langue :</label>

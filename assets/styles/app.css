@@ -30,6 +30,7 @@ body {
 main{
     margin-top: 79px;
     flex: 1;
+    margin-bottom: 79px;
 }
 
 header{
@@ -140,7 +141,7 @@ main section:nth-child(2){
     padding: 7% 0 0 0;
 }
 
-main section:nth-child(2) h2, main section:nth-child(3) h2, #certif h2{
+h2{
     padding: 20px 0 30px 0;
     font-size: 25pt;
     width: 100%;
@@ -314,6 +315,29 @@ hr {
     padding: 2% 0 0 0;
 }
 
+.contact-icons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 5%;
+}
+
+
+.contact-icons i {
+    font-size: 5rem;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.contact-icons a{
+    text-decoration: none;
+}
+.contact-info {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    text-decoration: none;
+}
 
 
 

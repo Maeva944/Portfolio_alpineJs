@@ -105,6 +105,54 @@
     </section>
     <section id="contact">
         <h2>Comment me contacter ?</h2>
+        <div class="contact-icons" x-data="{ selected: null }">
+            <!-- Email Icon -->
+            <div>
+                <i 
+                @mouseenter="$el.style.color = '#ff5733'; $el.style.transform = 'translateY(-5px)'" 
+                @mouseleave="$el.style.color = ''; $el.style.transform = 'translateY(0)'" 
+                @click="selected === 1 ? selected = null : selected = 1;" 
+                class="fa-solid fa-envelope"></i>
+                <div x-show="selected === 1" class="contact-info" x-transition>
+                    <p>maeva.nono@efrei.net</p>
+                </div>
+            </div>
+            
+            <!-- Phone Icon -->
+            <div>
+                <i 
+                @mouseenter="$el.style.color = '#28a745'; $el.style.transform = 'translateY(-5px)'" 
+                @mouseleave="$el.style.color = ''; $el.style.transform = 'translateY(0)'" 
+                @click="selected === 2 ? selected = null : selected = 2" 
+                class="fa-solid fa-phone"></i>
+                <div x-show="selected === 2" class="contact-info" x-transition>
+                    <p>+33 7 59 24 47</p>
+                </div>
+            </div>
+
+            <!-- LinkedIn Icon -->
+            <div>
+                <i 
+                @mouseenter="$el.style.color = '#007bff'; $el.style.transform = 'translateY(-5px)'" 
+                @mouseleave="$el.style.color = ''; $el.style.transform = 'translateY(0)'" 
+                @click="selected === 3 ? selected = null : selected = 3" 
+                class="fa-brands fa-linkedin"></i>
+                <div x-show="selected === 3" class="contact-info" x-transition>
+                    <p><a href="https://www.linkedin.com/in/ma%C3%ABva-nono-601a06296/" target ="_blank" >Mon LinkedIn</a></p>
+                </div>
+            </div>
+
+        <div>
+            <i
+            @mouseenter="$el.style.color = '#5968BA'; $el.style.transform = 'translateY(-5px)'" 
+            @mouseleave="$el.style.color = ''; $el.style.transform = 'translateY(0)'" 
+            @click="selected === 4 ? selected = null : selected = 4" 
+            class="fa-brands fa-github"></i>
+            <div x-show="selected === 4" class="contact-info" x-transition>
+                <p><a href="https://github.com/Maeva944" target ="_blank" >Mon GitHub</a></p>
+            </div>
+        </div>
+    </div>
     </section>
 </main>
 {% endblock %}

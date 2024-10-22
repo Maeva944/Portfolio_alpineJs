@@ -14,29 +14,27 @@ Bienvenue dans mon portfolio ! Ce projet est réalisé avec le framework Symfony
 Pour commencer à utiliser ce projet, suivez ces étapes :
 
 1. **Cloner le dépôt** :
-   ```bash
    git clone https://github.com/ton-utilisateur/ton-repo.git
    cd ton-repo
 
 
 Installer les dépendances : Assurez-vous d'avoir Composer installé sur votre machine, puis exécutez :
-composer install
+    composer install
+
 Configurer la base de données : Modifiez le fichier .env pour configurer votre connexion à la base de données :
-
-
-DATABASE_URL="mysql://username:password@localhost:3306/nom_de_la_base"
+    DATABASE_URL="mysql://username:password@localhost:3306/nom_de_la_base"
 
 Créer la base de données :
-php bin/console doctrine:database:create
+    php bin/console doctrine:database:create
 
 Exécuter les migrations : Si vous avez des migrations à exécuter, faites-le avec :
-php bin/console doctrine:migrations:migrate
+    php bin/console doctrine:migrations:migrate
 
 Lancer le serveur de développement :
-symfony server:star
+    symfony server:star
 
 Ou, si vous n'avez pas Symfony CLI :
-php -S localhost:8000 -t public
+    php -S localhost:8000 -t public
 
 ## Utilisation
 
